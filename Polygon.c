@@ -6,15 +6,15 @@
 
 Polygon* create_polygone(int nbpoints){
     Polygon* polygon = (Polygon*) malloc(sizeof(Polygon));
-    Point* tabpoints = (Point*) malloc(nbpoints*(sizeof(polygon)));
+    Point* tab_of_points = (Point*) malloc(nbpoints*(sizeof(polygon)));
     for(int i=0;i<nbpoints;i++){
         int x,y;
         printf("point %d\n",i+1);
         scanf("%d %d",&x,&y);
-        tabpoints[i]=*(create_point(x,y));
+        tab_of_points[i]=*(create_point(x,y));
         fflush(stdin);
     }
-    polygon->array_of_point=tabpoints;
+    polygon->array_of_point=tab_of_points;
     return polygon;
 }
 

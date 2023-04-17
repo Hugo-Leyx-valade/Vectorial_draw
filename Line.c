@@ -2,7 +2,7 @@
 // Created by hugol on 24/03/2023.
 //
 
-#include "Line.h"
+#include "include.h"
 
 
 Line* create_line(Point* point_1, Point* point_2){

@@ -2,7 +2,7 @@
 // Created by hugol on 28/03/2023.
 //
 
-#include "Shapes.h"
+#include "include.h"
 
 unsigned int get_next_id() {
     static unsigned int id = 1;
@@ -41,9 +41,9 @@ Shape *create_rectangle_shape(int px, int py, int width, int height) {
     return shp;
 }
 
-Shape *create_circle_shape(int px, int py, int radus) {
+Shape *create_circle_shape(int px, int py, int radius) {
     Shape *shp = create_empty_shape(CIRCLE);;
-    shp->realShape = create_circle(create_point(px, py), radus);
+    shp->realShape = create_circle(create_point(px, py), radius);
     return shp;
 }
 

@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #ifndef VECTORIAL_DRAW_CIRCLE_H
 #define VECTORIAL_DRAW_CIRCLE_H
+
 typedef struct {
     Point* center;
     int radius;
