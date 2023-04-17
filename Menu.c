@@ -4,7 +4,7 @@
 
 #include "include.h"
 
-void start(){
+void start() {
     printf("Please choose your action  :\n");
     printf("    A- Add a shape \n");
     printf("    B- Print shape's list \n");
@@ -13,8 +13,8 @@ void start(){
     printf("    E- Help \n");
 }
 
-void choose_action(){
+void choose_action() {
     char choice;
     printf("Your choice : ");
-    scanf("%c",&choice);
+    scanf("%c", &choice);
 }

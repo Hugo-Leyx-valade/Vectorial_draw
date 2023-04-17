@@ -3,10 +3,12 @@
 //
 
 #include "include.h"
+
 #ifndef VECTORIAL_DRAW1_MENU_H
 #define VECTORIAL_DRAW1_MENU_H
 
 void start();
+
 void choose_action();
 
 

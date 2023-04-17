@@ -4,18 +4,20 @@
 
 #include "Rect.h"
 
-Rectangle *create_rectangle(Point* top_left, int width, int height){
-    Rectangle *createdRect= (Rectangle*) malloc(sizeof(Rectangle));
-    createdRect->top_left=top_left;
-    createdRect->width=width;
-    createdRect->height=height;
+Rectangle *create_rectangle(Point *top_left, int width, int height) {
+    Rectangle *createdRect = (Rectangle *) malloc(sizeof(Rectangle));
+    createdRect->top_left = top_left;
+    createdRect->width = width;
+    createdRect->height = height;
     return createdRect;
 }
-void display_rect(Rectangle* rectangle){
-    printf("SQUARE : %d %d : width %d : heigth %d",rectangle->top_left->x1,rectangle->top_left->y1,rectangle->width,rectangle->height);
+
+void display_rect(Rectangle *rectangle) {
+    printf("SQUARE : %d %d : width %d : heigth %d", rectangle->top_left->x1, rectangle->top_left->y1, rectangle->width,
+           rectangle->height);
 }
 
-void delete_rect(Rectangle * rectangle){
+void delete_rect(Rectangle *rectangle) {
     delete_point(rectangle->top_left);
     free(rectangle);
 }

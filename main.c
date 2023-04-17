@@ -1,8 +1,8 @@
 #include "include.h"
-#include ""
 
 int main() {
     start();
+    choose_action();
     return 0;
 }
 

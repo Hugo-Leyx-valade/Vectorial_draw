@@ -4,23 +4,23 @@
 
 #include "Polygon.h"
 
-Polygon* create_polygone(int nbpoints){
-    Polygon* polygon = (Polygon*) malloc(sizeof(Polygon));
-    Point* tab_of_points = (Point*) malloc(nbpoints*(sizeof(polygon)));
-    for(int i=0;i<nbpoints;i++){
-        int x,y;
-        printf("point %d\n",i+1);
-        scanf("%d %d",&x,&y);
-        tab_of_points[i]=*(create_point(x,y));
+Polygon *create_polygone(int nbpoints) {
+    Polygon *polygon = (Polygon *) malloc(sizeof(Polygon));
+    Point *tab_of_points = (Point *) malloc(nbpoints * (sizeof(polygon)));
+    for (int i = 0; i < nbpoints; i++) {
+        int x, y;
+        printf("point %d\n", i + 1);
+        scanf("%d %d", &x, &y);
+        tab_of_points[i] = *(create_point(x, y));
         fflush(stdin);
     }
-    polygon->array_of_point=tab_of_points;
+    polygon->array_of_point = tab_of_points;
     return polygon;
 }
 
-void display_polygon(Polygon* polygon){
-    printf("polygon :" );
-    for(int i=0;i<3;i++){
-        printf("point %d : x=%d y=%d",i,polygon->array_of_point[i].x1,polygon->array_of_point[i].y1);
+void display_polygon(Polygon *polygon) {
+    printf("polygon :");
+    for (int i = 0; i < 3; i++) {
+        printf("point %d : x=%d y=%d", i, polygon->array_of_point[i].x1, polygon->array_of_point[i].y1);
     }
 }
