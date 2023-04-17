@@ -11,6 +11,8 @@
 #include "Forms.h"
 
 int main() {
-
+    Point* center = create_point(5,5);
+    Circle* cercle = create_circle(center,15);
+    display_circle(cercle);
     return 0;
 }
