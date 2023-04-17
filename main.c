@@ -4,10 +4,13 @@
 #include "Point.h"
 #include "Line.h"
 #include "Polygon.h"
+#include "Circle.h"
+#include "Square.h"
+#include "Shapes.h"
+#include "Rect.h"
+#include "Forms.h"
 
 int main() {
-    Polygon* polygon;
-    polygon = create_polygone(3);
-    display_polygon(polygon);
+
     return 0;
 }
