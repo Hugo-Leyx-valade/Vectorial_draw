@@ -13,8 +13,22 @@ void start() {
     printf("    E- Help \n");
 }
 
-void choose_action() {
+char* choose_action() {
     char choice;
     printf("Your choice : ");
     scanf("%c", &choice);
+}
+
+void switch_case_action(char *chara){
+    TypeForm type_form;
+    switch(*chara){
+        case('A'):
+            printf("Choose form between : POINT, LINE, SQUARE, RECT, CIRCLE, POLYGON .");
+            scanf("%s",type_form);
+            create_empty_shape(type_form);
+            break;
+
+        case('B'):
+
+    }
 }
