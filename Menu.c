@@ -28,7 +28,7 @@ void switch_case_action(char chara){
             printf("Choose form between : POINT, LINE, SQUARE, RECT, CIRCLE, POLYGON :");
             scanf("%s",char_type_form);
             type_form = StringToTypeForm(char_type_form);
-            create_empty_shape(type_form);
+            switch()
             break;
 
         case('B'):

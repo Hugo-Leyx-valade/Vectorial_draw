@@ -27,11 +27,15 @@ LlcShape* add_to_first(LlcShape* cell, Shape* value){
 
 LlcShape* add_to_last(LlcShape* cell, Shape* value){
     LlcShape* lastcell = create_cell(value);
-    LlcShape* temp = cell;
-    while(temp->next != NULL){
-        temp = temp->next;
+    if(cell!=NULL){
+        LlcShape* temp = cell;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->next=lastcell;
+    }else{
+        return lastcell;
     }
-    temp->next=lastcell;
     return cell;
 }
 
