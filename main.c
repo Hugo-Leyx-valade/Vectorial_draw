@@ -11,6 +11,8 @@
 #include "Forms.h"
 
 int main() {
-
+    Polygon* hugo = NULL;
+    hugo = create_polygone(3);
+    display_polygon(hugo);
     return 0;
 }
