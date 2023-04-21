@@ -14,5 +14,9 @@ int main() {
     Polygon* hugo = NULL;
     hugo = create_polygone(3);
     display_polygon(hugo);
+    start();
+    char choice ;
+    choice = choose_action();
+    switch_case_action(choice);
     return 0;
 }
