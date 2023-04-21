@@ -1,16 +1,9 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include "Point.h"
-#include "Line.h"
-#include "Polygon.h"
-#include "Circle.h"
-#include "Square.h"
-#include "Shapes.h"
-#include "Rect.h"
-#include "Forms.h"
+#include "include.h"
 
 int main() {
-
+    start();
+    choose_action();
     return 0;
 }
+
+
