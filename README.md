@@ -11,11 +11,7 @@ Télécharger le fichier _.zip_ contenant le projet.
 
 * **UTILISATION :**
 
-Pour lancer le projet éxécutez le simplement grace à la flèche verte :
-
-![Image](image_onglet.png "image")
-![Image](arrow_start.png "image")
-
+Pour lancer le projet éxécutez le simplement le _.exe_ situé dans le fichié "exe".   
 Ainsi le **_main.c_** se lance et éxécute le programme principal.
 Un menu s'affiche et vous propose de choisir entre plusieurs options :
 
