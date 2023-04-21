@@ -6,7 +6,7 @@
 *** 
 
 * **INSTALATION :**
-  
+
 Télécharger le fichier _.zip_ contenant le projet.
 
 * **UTILISATION :**
@@ -17,7 +17,7 @@ Pour lancer le projet éxécutez le simplement grace à la flèche verte :
 ![Image](arrow_start.png "image")
 
 Ainsi le **_main.c_** se lance et éxécute le programme principal.
-Un menu s'affiche et vous propose de choisir entre plusieurs options : 
+Un menu s'affiche et vous propose de choisir entre plusieurs options :
 
 ![image](menu.png "image")
 
