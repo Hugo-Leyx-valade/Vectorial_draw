@@ -9,9 +9,9 @@
 
 void start();
 
-char* choose_action();
+char choose_action();
 
-void switch_case_action(char *);
+void switch_case_action(char chara);
 
 
 #endif //VECTORIAL_DRAW1_MENU_H

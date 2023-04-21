@@ -10,5 +10,5 @@ typedef enum {
     POINT, LINE, SQUARE, RECT, CIRCLE, POLYGON
 } TypeForm;
 
-
+TypeForm
 #endif //VECTORIAL_DRAW_FORMS_H

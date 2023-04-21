@@ -8,22 +8,23 @@ void start() {
     printf("Please choose your action  :\n");
     printf("    A- Add a shape \n");
     printf("    B- Print shape's list \n");
-    printf("    C- Delete a shape \n");
-    printf("    D- Draw a shape \n");
-    printf("    E- Help \n");
+    printf("    C- Delete a shape (Coming soon) \n");
+    printf("    D- Draw a shape (Coming soon)\n");
+    printf("    E- Help (Coming soon) \n");
 }
 
-char* choose_action() {
+char choose_action() {
     char choice;
-    printf("Your choice : ");
+    printf("Your choice :");
     scanf("%c", &choice);
+    return choice;
 }
 
-void switch_case_action(char *chara){
-    TypeForm type_form;
-    switch(*chara){
+void switch_case_action(char chara){
+    char* type_form;
+    switch(chara){
         case('A'):
-            printf("Choose form between : POINT, LINE, SQUARE, RECT, CIRCLE, POLYGON .");
+            printf("Choose form between : POINT, LINE, SQUARE, RECT, CIRCLE, POLYGON :");
             scanf("%s",type_form);
             create_empty_shape(type_form);
             break;
