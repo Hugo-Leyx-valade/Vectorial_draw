@@ -5,6 +5,7 @@
 #include "Shapes.h"
 #include "Bool.h"
 #include <stdio.h>
+
 #ifndef VECTORIAL_DRAW1_LLC_SHAPE_H
 #define VECTORIAL_DRAW1_LLC_SHAPE_H
 
@@ -19,8 +20,8 @@ LlcShape* create_cell(Shape* value);
 Bool llc_empty(LlcShape* cell);
 LlcShape* add_to_first(LlcShape* cell, Shape* value);
 LlcShape* add_to_last(LlcShape* cell, Shape* value) ;
-int taille_liste(LlcShape* liste);
-void afficher_liste(LlcShape* liste);
+int length_llc(LlcShape* cell);
+void show_full_llc(LlcShape* cell);
 
 
 

@@ -1,7 +1,9 @@
 //
 // Created by hugol on 28/03/2023.
 //
-#include "include.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 #ifndef VECTORIAL_DRAW_STRINGTOARRAY_H
 #define VECTORIAL_DRAW_STRINGTOARRAY_H

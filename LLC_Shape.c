@@ -39,7 +39,7 @@ LlcShape* add_to_last(LlcShape* cell, Shape* value){
     return cell;
 }
 
-int taille_liste(LlcShape* cell){
+int length_llc(LlcShape* cell){
     int i=0;
     LlcShape* temp = cell;
     while(temp != NULL){
@@ -49,10 +49,10 @@ int taille_liste(LlcShape* cell){
     return i;
 }
 
-void afficher_liste(LlcShape* cell){
+void show_full_llc(LlcShape* cell){
     LlcShape* temp = cell;
     while(temp != NULL){
-        printf("%d ",temp->value);
+        TypeForm type = temp->value->type;
         temp = temp->next;
     }
 }

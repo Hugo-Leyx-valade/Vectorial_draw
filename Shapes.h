@@ -2,9 +2,6 @@
 // Created by hugol on 28/03/2023.
 //
 
-#ifndef VECTORIAL_DRAW_SHAPES_H
-#define VECTORIAL_DRAW_SHAPES_H
-
 #include "Forms.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -15,7 +12,12 @@
 #include "Square.h"
 #include "Circle.h"
 #include "Polygon.h"
-#include "include.h"
+
+
+#ifndef VECTORIAL_DRAW_SHAPES_H
+#define VECTORIAL_DRAW_SHAPES_H
+
+
 
 
 #define maxShapes 100
@@ -28,7 +30,7 @@ typedef struct {
 
 Shape *create_empty_shape(TypeForm shape_type);
 
-Shape *create_point_shape(int px, int py);
+Shape *create_point_shape(int* coord);
 
 Shape *create_line_shape(int px1, int py1, int px2, int py2);
 
@@ -40,9 +42,11 @@ Shape *create_circle_shape(int px, int py, int radius);
 
 Shape *create_polygon_shape(int lst[], int n);
 
+TypeForm get_form_by_ID(unsigned int i);
+
 void delete_shape(Shape *shape);
 
-void print_shape(Shape *shape);
+void print_shape(unsigned int id_shape,Shape *shape);
 
 unsigned int get_next_id();
 
