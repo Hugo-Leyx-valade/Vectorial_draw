@@ -9,18 +9,15 @@
 #include "Shapes.h"
 #include "Rect.h"
 #include "Forms.h"
+#include "LLC_Shape.h"
+#include "Menu.h"
 
 int main() {
-
-
-
-    Polygon* hugo = NULL;
-    hugo = create_polygone(3);
-    display_polygon(hugo);
-
+    LlcShape* ShapeList = NULL;
     start();
     char choice ;
     choice = choose_action();
-    switch_case_action(choice);
+    switch_case_action(choice,ShapeList);
+    show_full_llc(ShapeList);
     return 0;
 }

@@ -27,15 +27,19 @@ LlcShape* add_to_first(LlcShape* cell, Shape* value){
 
 LlcShape* add_to_last(LlcShape* cell, Shape* value){
     LlcShape* lastcell = create_cell(value);
-    LlcShape* temp = cell;
-    while(temp->next != NULL){
-        temp = temp->next;
+    if(cell!=NULL){
+        LlcShape* temp = cell;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->next=lastcell;
+    }else{
+        return lastcell;
     }
-    temp->next=lastcell;
     return cell;
 }
 
-int taille_liste(LlcShape* cell){
+int length_llc(LlcShape* cell){
     int i=0;
     LlcShape* temp = cell;
     while(temp != NULL){
@@ -45,10 +49,10 @@ int taille_liste(LlcShape* cell){
     return i;
 }
 
-void afficher_liste(LlcShape* cell){
+void show_full_llc(LlcShape* cell){
     LlcShape* temp = cell;
     while(temp != NULL){
-        printf("%d ",temp->value);
+        TypeForm type = temp->value->type;
         temp = temp->next;
     }
 }

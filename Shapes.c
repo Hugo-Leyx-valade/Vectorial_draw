@@ -17,9 +17,11 @@ Shape *create_empty_shape(TypeForm shape_type) {
     return shp;
 }
 
-Shape *create_point_shape(int px, int py) {
+
+
+Shape *create_point_shape(int* coord) {
     Shape *shp = create_empty_shape(POINT);
-    shp->realShape = create_point(px, py);
+    shp->realShape = create_point(coord[0], coord[1]);
     return shp;
 }
 
@@ -58,6 +60,7 @@ void delete_shape(Shape *shape) {
     free(shape->realShape);
     free(shape);
 }
+
 
 void print_shape(unsigned int id_shape) {
 
