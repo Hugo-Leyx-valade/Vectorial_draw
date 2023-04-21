@@ -21,11 +21,13 @@ char choose_action() {
 }
 
 void switch_case_action(char chara){
-    char* type_form;
+    char* char_type_form;
+    TypeForm type_form;
     switch(chara){
         case('A'):
             printf("Choose form between : POINT, LINE, SQUARE, RECT, CIRCLE, POLYGON :");
-            scanf("%s",type_form);
+            scanf("%s",char_type_form);
+            type_form = StringToTypeForm(char_type_form);
             create_empty_shape(type_form);
             break;
 

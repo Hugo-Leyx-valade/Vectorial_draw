@@ -59,28 +59,7 @@ void delete_shape(Shape *shape) {
     free(shape);
 }
 
-void print_shape(Shape *shape) {
-    switch (shape->type) {
-        case POINT:
-            display_point((Point *) shape->realShape);
-            break;
-        case LINE:
-            display_line((Line *) shape->realShape);
-            break;
-        case SQUARE:
-            display_square((Square *) shape->realShape);
-            break;
-        case RECT:
-            display_rect((Rectangle *) shape->realShape);
-            break;
-        case POLYGON:
-            display_polygon((Polygon *) shape->realShape);
-            break;
-        case CIRCLE:
-            display_circle((Circle *) shape->realShape);
-            break;
-        default:
-            break;
-    }
+void print_shape(unsigned int id_shape) {
+
 }
 
