@@ -13,13 +13,13 @@ typedef struct LlcShape {
     struct LlcShape* next;
 }LlcShape;
 
-
-LlcShape* create_first_cell(Shape* value);
+LlcShape* create_empty_llc();
+LlcShape* create_cell(Shape* value);
 Bool llc_empty(LlcShape* cell);
 LlcShape* add_to_first(LlcShape* cell, Shape* value);
-LlcShape* add_to_last(LlcShape* cell, Shape* value) ;
-int taille_liste(LlcShape* liste);
-void afficher_liste(LlcShape* liste);
+LlcShape* add_to_llc(LlcShape* cell, Shape* value) ;
+int length_llc(LlcShape* liste);
+void display_llc(LlcShape* liste);
 Shape* getShapeById(LlcShape* cell ,unsigned int id);
 
 #endif //_LLCSHAPE_H

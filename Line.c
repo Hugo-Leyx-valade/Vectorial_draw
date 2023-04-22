@@ -14,7 +14,7 @@ Line* create_line(Point* point_1, Point* point_2){
 
 void display_line(Line* line){
     if(line != NULL){
-        printf("LINE : POINT1- %d %d | POINT2- %d %d",line->point_1->x1,line->point_1->y1,line->point_2->x1,line->point_2->y1);
+        printf("LINE : POINT1: %d %d | POINT2: %d %d",line->point_1->x1,line->point_1->y1,line->point_2->x1,line->point_2->y1);
     }
 
 }

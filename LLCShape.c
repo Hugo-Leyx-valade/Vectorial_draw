@@ -3,12 +3,21 @@
 //
 
 #include "LLCShape.h"
-LlcShape* create_first_cell(Shape* value){
+
+LlcShape* create_empty_llc(){
+    LlcShape* cell = (LlcShape*) malloc(sizeof (LlcShape));
+    cell = NULL;
+    return cell;
+}
+
+
+LlcShape* create_cell(Shape* value){
     LlcShape* cell = (LlcShape*) malloc(sizeof (LlcShape));
     cell->value= value;
     cell->next=NULL;
     return cell;
 }
+
 
 Bool llc_empty(LlcShape* cell){
     if ( cell == NULL){
@@ -21,21 +30,25 @@ Bool llc_empty(LlcShape* cell){
 LlcShape* add_to_first(LlcShape* cell, Shape* value){
     LlcShape* firstcell= create_cell(value);
     firstcell->next = cell;
-    firstcell=cell;
     return firstcell;
 }
 
-LlcShape* add_to_last(LlcShape* cell, Shape* value){
-    LlcShape* lastcell = create_cell(value);
-    LlcShape* temp = cell;
-    while(temp->next != NULL){
-        temp = temp->next;
+LlcShape* add_to_llc(LlcShape* cell, Shape* value){
+    if(llc_empty(cell)==FALSE){
+        LlcShape* lastcell = create_cell(value);
+        LlcShape* temp = cell;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->next=lastcell;
+        return cell;
+    }else{
+        cell = create_cell(value);
+        return cell;
     }
-    temp->next=lastcell;
-    return cell;
 }
 
-int taille_liste(LlcShape* cell){
+int length_llc(LlcShape* cell){
     int i=0;
     LlcShape* temp = cell;
     while(temp != NULL){
@@ -45,10 +58,11 @@ int taille_liste(LlcShape* cell){
     return i;
 }
 
-void afficher_liste(LlcShape* cell){
+void display_llc(LlcShape* cell){
     LlcShape* temp = cell;
     while(temp != NULL){
-        printf("%d ",temp->value);
+        display_shape(temp->value);
+        printf("\n");
         temp = temp->next;
     }
 }
