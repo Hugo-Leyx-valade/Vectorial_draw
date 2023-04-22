@@ -26,6 +26,7 @@ int main() {
     printf("%d",length_llc(test));
     printf("\n");
     display_llc(test);
-
+    printf("\n\n\n");
+    display_shape(getShapeById(test,1));
     return 0;
 }
