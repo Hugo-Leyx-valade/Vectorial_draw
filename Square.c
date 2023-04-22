@@ -13,11 +13,12 @@ Square *create_square(Point *top_left, int length) {
 }
 
 
-void display_square(Square *square) {
-    printf("SQUARE : %d %d : length %d ", square->top_left->x1, square->top_left->y1, square->length);
+void display_square(Square* square){
+    printf("SQUARE : %d %d | length %d ",square->top_left->x1,square->top_left->y1,square->length);
 }
 
-void delete_square(Square *square) {
-    delete_point(square->top_left);
-    free(square);
+void delete_square(Square** square){
+    delete_point(&((*square)->top_left));
+    free(*square);
+    *square=NULL;
 }

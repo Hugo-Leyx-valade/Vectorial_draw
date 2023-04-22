@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "Point.h"
 #include "Line.h"
 #include "Rect.h"
 #include "Square.h"
@@ -22,9 +21,8 @@
 typedef struct {
     unsigned int id_shape;
     TypeForm type;
-    void *realShape;
-} Shape;
-
+    void* realShape;
+}Shape;
 
 Shape *create_empty_shape(TypeForm shape_type);
 
@@ -38,12 +36,13 @@ Shape *create_rectangle_shape(int px, int py, int width, int height);
 
 Shape *create_circle_shape(int px, int py, int radius);
 
-Shape *create_polygon_shape(int lst[], int n);
+Shape *create_polygon_shape(CoordTab* CoordinateArray);
 
 void delete_shape(Shape *shape);
 
-void print_shape(Shape *shape);
+void display_shape(Shape *shape);
 
 unsigned int get_next_id();
+
 
 #endif //VECTORIAL_DRAW_SHAPES_H

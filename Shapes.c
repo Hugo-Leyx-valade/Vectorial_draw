@@ -37,7 +37,7 @@ Shape *create_square_shape(int px, int py, int length) {
 
 Shape *create_rectangle_shape(int px, int py, int width, int height) {
     Shape *shp = create_empty_shape(RECT);
-    shp->realShape = create_rectangle(create_point(px, py), width, height);
+    shp->realShape = create_rect(create_point(px, py), width, height);
     return shp;
 }
 
@@ -47,19 +47,69 @@ Shape *create_circle_shape(int px, int py, int radius) {
     return shp;
 }
 
-Shape *create_polygon_shape(int lst[], int n) {
+Shape *create_polygon_shape(CoordTab* CoordinateArray) {
     Shape *shp = create_empty_shape(POLYGON);;
-    shp->realShape = create_polygone(n);
+    shp->realShape = create_polygone(CoordinateArray);
     return shp;
 }
 
 
 void delete_shape(Shape *shape) {
-    free(shape->realShape);
+    switch (shape->type) {
+        case POINT:
+            delete_point((Point**) &shape->realShape);
+            break;
+        case LINE:
+            delete_line((Line**)&shape->realShape);
+            break;
+        case SQUARE:
+            delete_square((Square**)&shape->realShape);
+            break;
+        case RECT:
+            delete_rect((Rectangle**)&shape->realShape);
+            break;
+        case POLYGON:
+            delete_polygon((Polygon**)&shape->realShape);
+            break;
+        case CIRCLE:
+            delete_circle((Circle**)&shape->realShape);
+            break;
+        default:
+            break;
+    }
     free(shape);
 }
 
-void print_shape(unsigned int id_shape) {
 
+void display_shape(Shape* shape) {
+    switch (shape->type) {
+        case POINT:
+            display_point((Point*) shape->realShape);
+            break;
+        case LINE:
+            display_line((Line*)shape->realShape);
+            break;
+        case SQUARE:
+            display_square((Square*)shape->realShape);
+            break;
+        case RECT:
+            display_rect((Rectangle*)shape->realShape);
+            break;
+        case POLYGON:
+            display_polygon((Polygon*)shape->realShape);
+            break;
+        case CIRCLE:
+            display_circle((Circle*)shape->realShape);
+            break;
+        default:
+            break;
+    }
 }
+
+
+unsigned int getNewIdAnimal(){
+    static unsigned int id = 0;
+    return ++id;
+}
+
 
