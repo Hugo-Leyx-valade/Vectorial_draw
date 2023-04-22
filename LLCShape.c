@@ -3,7 +3,7 @@
 //
 
 #include "LLCShape.h"
-LlcShape* create_cell(Shape* value){
+LlcShape* create_first_cell(Shape* value){
     LlcShape* cell = (LlcShape*) malloc(sizeof (LlcShape));
     cell->value= value;
     cell->next=NULL;

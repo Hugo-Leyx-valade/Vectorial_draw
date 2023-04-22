@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "Point.h"
 #include "Line.h"
 #include "Rect.h"
 #include "Square.h"
@@ -23,9 +22,25 @@ typedef struct {
     void* realShape;
 }Shape;
 
-void createShape(Shape* shape,TypeForm type,void* realshape);
-void displayShape(Shape* shape);
-unsigned int getNewIdAnimal();
+Shape *create_empty_shape(TypeForm shape_type);
+
+Shape *create_point_shape(int px, int py);
+
+Shape *create_line_shape(int px1, int py1, int px2, int py2);
+
+Shape *create_square_shape(int px, int py, int length);
+
+Shape *create_rectangle_shape(int px, int py, int width, int height);
+
+Shape *create_circle_shape(int px, int py, int radius);
+
+Shape *create_polygon_shape(CoordTab* CoordinateArray);
+
+void delete_shape(Shape *shape);
+
+void display_shape(Shape *shape);
+
+unsigned int get_next_id();
 
 
 #endif //VECTORIAL_DRAW_SHAPES_H

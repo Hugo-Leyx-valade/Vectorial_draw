@@ -14,7 +14,7 @@ typedef struct LlcShape {
 }LlcShape;
 
 
-LlcShape* create_cell(Shape* value);
+LlcShape* create_first_cell(Shape* value);
 Bool llc_empty(LlcShape* cell);
 LlcShape* add_to_first(LlcShape* cell, Shape* value);
 LlcShape* add_to_last(LlcShape* cell, Shape* value) ;

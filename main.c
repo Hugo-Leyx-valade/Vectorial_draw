@@ -12,42 +12,19 @@
 #include "LLCShape.h"
 
 int main() {
-    //Test Point's functions
-    Point* testpoint = create_point(5,8);
-    display_point(testpoint);
-    delete_point(&testpoint);
-    delete_point(testpoint);
+    // Creates a point then delete it
+    Shape* PointShape = create_point_shape(5,10);
+    display_shape(PointShape);
+    delete_shape(PointShape);
+    display_shape(PointShape);
     printf("\n\n\n");
 
 
-    //Test Line's Functions
-    Point* Linepoint1 = create_point(15,18);
-    Point* Linepoint2 = create_point(13,110);
-    Line* testline = create_line(Linepoint1,Linepoint2);
-    display_line(testline);
-    delete_line(&testline);
-    display_line(testline);
-
-    //Test
-
-
-
-
-    Circle* circ = create_circle(point1,15);
-    Rectangle* rect = create_rect(point1,10,10);
-    CoordTab* coordinate= (CoordTab*) malloc(sizeof(CoordTab));
-    coordinate->coords = (int*) malloc(sizeof(int)*4);
-    coordinate->coords[0] = 5;
-    coordinate->coords[1] = 6;
-    coordinate->coords[2] = 8;
-    coordinate->coords[3] = 2;
-    coordinate->size = 4;
-
-    Polygon* polygon= create_polygone(coordinate);
-    display_polygon(polygon);
-    delete_polygon(&polygon);
-    display_polygon(polygon);
-
+    // Creates a line then delete it
+    Shape* LineShape = create_line_shape(5,6,12,13);
+    display_shape(LineShape);
+    delete_shape(LineShape);
+    display_shape(LineShape);
 
 
     return 0;
