@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 #ifndef VECTORIAL_DRAW_POLYGON_H
 #define VECTORIAL_DRAW_POLYGON_H
 

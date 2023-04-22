@@ -4,6 +4,7 @@
 
 #include "Rect.h"
 
+
 Rectangle *create_rect(Point* top_left, int width, int height){
     Rectangle *createdRect= (Rectangle*) malloc(sizeof(Rectangle));
     createdRect->top_left=top_left;

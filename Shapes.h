@@ -4,6 +4,7 @@
 
 #ifndef VECTORIAL_DRAW_SHAPES_H
 #define VECTORIAL_DRAW_SHAPES_H
+
 #include "Forms.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -13,6 +14,7 @@
 #include "Square.h"
 #include "Circle.h"
 #include "Polygon.h"
+#include "include.h"
 
 
 #define maxShapes 100

@@ -5,12 +5,17 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 #ifndef VECTORIAL_DRAW_SQUARE_H
 #define VECTORIAL_DRAW_SQUARE_H
 typedef struct {
-    Point* top_left;
+    Point *top_left;
     int length;
-}Square;
+} Square;
+
+Square *create_square(Point *top_left, int length);
+
+void delete_square(Square *square);
 
 Square *create_square(Point* top_left, int length);
 void delete_square(Square** square);

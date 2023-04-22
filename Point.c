@@ -3,12 +3,14 @@
 //
 
 #include "Point.h"
-Point* create_point(int x1, int y1){
-    Point *createdPoint= (Point*) malloc(sizeof(Point));
-    createdPoint->x1=x1;
-    createdPoint->y1=y1;
+
+Point *create_point(int x1, int y1) {
+    Point *createdPoint = (Point *) malloc(sizeof(Point));
+    createdPoint->x1 = x1;
+    createdPoint->y1 = y1;
     return createdPoint;
 }
+
 
 void display_point(Point* point){
     if(point != NULL) {

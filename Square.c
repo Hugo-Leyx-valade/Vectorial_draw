@@ -5,8 +5,8 @@
 #include "Square.h"
 
 
-Square *create_square(Point* top_left, int length){
-    Square *square = (Square*) malloc(sizeof (Square*));
+Square *create_square(Point *top_left, int length) {
+    Square *square = (Square *) malloc(sizeof(Square *));
     square->top_left = top_left;
     square->length = length;
     return square;

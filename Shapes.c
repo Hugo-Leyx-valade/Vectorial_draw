@@ -55,10 +55,8 @@ Shape *create_polygon_shape(CoordTab* CoordinateArray) {
 
 
 void delete_shape(Shape *shape) {
-
     switch (shape->type) {
         case POINT:
-
             delete_point((Point**) &shape->realShape);
             break;
         case LINE:
