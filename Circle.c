@@ -4,7 +4,7 @@
 
 #include "Circle.h"
 
-Circle *creat_circle(Point* center, int radius){
+Circle* create_circle(Point* center, int radius){
     Circle *circle = (Circle *) malloc(sizeof (Circle*));
     circle -> center = center;
     circle -> radius = radius;
@@ -18,8 +18,9 @@ void display_circle(Circle *circle){
 
 }
 
-void delete_circle(Circle* circle){
-    delete_point(circle->center);
-    free(circle);
+void delete_circle(Circle** circle){
+    delete_point(&((*circle)->center));
+    free(*circle);
+    *circle=NULL;
 }
 

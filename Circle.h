@@ -2,6 +2,7 @@
 // Created by hugol on 24/03/2023.
 //
 #include "Point.h"
+#include "Line.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -13,7 +14,7 @@ typedef struct {
 }Circle;
 
 Circle *create_circle(Point* center, int radius);
-void delete_circle(Circle* circle);
+void delete_circle(Circle** circle);
 void display_circle(Circle* circle);
 
 

@@ -20,8 +20,8 @@ void display_line(Line* line){
 }
 
 void delete_line(Line** line){
-    delete_point((*line)->point_1);
-    delete_point((*line)->point_2);
+    delete_point(&((*line)->point_1));
+    delete_point(&((*line)->point_2));
     free(*line);
     *line = NULL;
 }

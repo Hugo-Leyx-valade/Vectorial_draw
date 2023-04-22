@@ -13,7 +13,7 @@ typedef struct {
 }Square;
 
 Square *create_square(Point* top_left, int length);
-void delete_square(Square* square);
+void delete_square(Square** square);
 void display_square(Square* square);
 
 #endif //VECTORIAL_DRAW_SQUARE_H

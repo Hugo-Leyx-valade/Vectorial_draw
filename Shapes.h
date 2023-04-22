@@ -21,11 +21,11 @@ typedef struct {
     unsigned int id_shape;
     TypeForm type;
     void* realShape;
-}SHAPE;
+}Shape;
 
-void createShape(SHAPE* shape,TypeForm type,void* realshape);
-void displayShape(SHAPE* shape);
+void createShape(Shape* shape,TypeForm type,void* realshape);
+void displayShape(Shape* shape);
 unsigned int getNewIdAnimal();
-SHAPE* getAnimalById(SHAPE* shapes, unsigned int id);
+
 
 #endif //VECTORIAL_DRAW_SHAPES_H

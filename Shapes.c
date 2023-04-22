@@ -4,14 +4,14 @@
 
 #include "Shapes.h"
 
-void createShape(SHAPE* shape,TypeForm type,void* realshape){
+void createShape(Shape* shape,TypeForm type,void* realshape){
     shape->id_shape = getNewIdAnimal();
     shape->type = type;
     shape->realShape = realshape;
 }
 
 
-void displayShape(SHAPE* shape) {
+void displayShape(Shape* shape) {
     switch (shape->type) {
         case POINT:
             display_point((Point*) shape->realShape);
@@ -42,11 +42,4 @@ unsigned int getNewIdAnimal(){
     return ++id;
 }
 
-SHAPE* getAnimalById(SHAPE* shapes, unsigned int id){
-    for (int i = 0; i < maxShapes; i++) {
-        if (shapes[i].id_shape == id) {
-            return &shapes[i];
-        }
-    }
-    return NULL;
-}
+
