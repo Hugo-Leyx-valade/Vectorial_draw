@@ -67,6 +67,8 @@ void display_llc(LlcShape* cell){
     }
 }
 
+
+
 Shape* getShapeById(LlcShape* cell, unsigned int id){
     LlcShape* temp = cell;
     while((temp != NULL) && (temp->value->id_shape != id)){

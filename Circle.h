@@ -15,11 +15,6 @@ typedef struct {
     int radius;
 } Circle;
 
-Circle *create_circle(Point *center, int radius);
-
-void delete_circle(Circle *circle);
-
-
 Circle *create_circle(Point* center, int radius);
 void delete_circle(Circle** circle);
 void display_circle(Circle* circle);
