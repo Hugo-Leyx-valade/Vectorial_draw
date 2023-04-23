@@ -4,30 +4,44 @@
 
 #include "Shapes.h"
 #include "LLCShape.h"
-
+#include "time.h"
 int main() {
-    // Creates a point then delete it
-    Shape* PointShape = create_point_shape(5,10);
-    /*display_shape(PointShape);
-    delete_shape(PointShape);
-    display_shape(PointShape);
-    printf("\n\n\n");*/
-
-
-    // Creates a line then delete it
-    Shape* LineShape = create_line_shape(5,6,12,13);
-    /*display_shape(LineShape);
-    delete_shape(LineShape);
-    display_shape(LineShape);*/
-
-    LlcShape* test = create_empty_llc();
-    test=add_to_llc(test,PointShape);
-    test=add_to_llc(test,LineShape);
-    printf("%d",length_llc(test));
+    printf("create a point with 5 | 10 coordinates\n");
+    Shape* point = create_point_shape(5,10);
+    printf("test display function\n");
+    display_shape(point);
     printf("\n");
-    display_llc(test);
-    printf("\n\n\n");
-    display_shape(getShapeById(test,1));
+    printf("test delete function and try to display point after\n");
+    delete_shape(point);
+    display_shape(point);
+    printf("\n\n");
+    printf("create empty list\n");
+    LlcShape* List = create_empty_llc();
+    printf("create rectangle with 7 | 6 top left coordinates , 3 width and 4 height\n");
+    Shape* rectangle = create_rectangle_shape(7,6,3,4);
+    printf("add rectangle to list and display list\n");
+    List = add_to_llc(List,rectangle);
+    display_llc(List);
+    printf("\n");
+    printf("create circle with 9 | 3 center coordinates and 4 radius\n");
+    Shape* Circle = create_circle_shape(9,3,4);
+    printf("add circle to list and display list\n");
+    List= add_to_llc(List,Circle);
+    display_llc(List);
+    printf("\n");
+    printf("show shape with id 2\n");
+    display_shape(getShapeById(List,2));
+    printf("\n");
+    printf("\n");
+    printf("delete shape with id 3 and show list\n");
+    deleteShapeFromLlc(List,3);
+    display_llc(List);
+
+
+
+
+
+
 
     return 0;
 }

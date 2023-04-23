@@ -21,5 +21,6 @@ LlcShape* add_to_llc(LlcShape* cell, Shape* value) ;
 int length_llc(LlcShape* liste);
 void display_llc(LlcShape* liste);
 Shape* getShapeById(LlcShape* cell ,unsigned int id);
+void deleteShapeFromLlc(LlcShape* cell,unsigned int id);
 
 #endif //_LLCSHAPE_H

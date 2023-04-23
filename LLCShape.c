@@ -61,6 +61,7 @@ int length_llc(LlcShape* cell){
 void display_llc(LlcShape* cell){
     LlcShape* temp = cell;
     while(temp != NULL){
+        printf("%d : ",temp->value->id_shape);
         display_shape(temp->value);
         printf("\n");
         temp = temp->next;
@@ -75,4 +76,18 @@ Shape* getShapeById(LlcShape* cell, unsigned int id){
         temp = temp->next;
     }
     return temp->value;
+}
+
+void deleteShapeFromLlc(LlcShape* cell,unsigned int id){
+    LlcShape* temp = cell;
+    if(temp->value->id_shape != id){
+        while((temp != NULL) && (temp->next->value->id_shape != id)){
+            temp = temp->next;
+        }
+        delete_shape(temp->next->value);
+        temp->next=temp->next->next;
+    }else{
+        delete_shape(temp->value);
+        cell = cell->next;
+    }
 }
