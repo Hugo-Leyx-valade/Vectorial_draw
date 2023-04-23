@@ -36,7 +36,7 @@ int main() {
     printf("delete shape with id 3 and show list\n");
     deleteShapeFromLlc(List,3);
     display_llc(List);
-
+    while(TRUE);
 
 
 
