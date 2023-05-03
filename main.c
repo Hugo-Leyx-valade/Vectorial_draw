@@ -10,14 +10,13 @@
 #include "Rect.h"
 #include "Forms.h"
 #include "LLC_Shape.h"
-#include "Menu.h"
 
 int main() {
-    LlcShape* ShapeList = NULL;
+    LlcShape* shapelist = NULL ;
     start();
-    char choice ;
+    char choice;
     choice = choose_action();
-    switch_case_action(choice,ShapeList);
-    show_full_llc(ShapeList);
+    switch_case_action(choice,shapelist);
+    display_point()
     return 0;
 }

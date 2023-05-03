@@ -2,7 +2,7 @@
 // Created by hugol on 17/04/2023.
 //
 
-#include "include.h"
+#include "Menu.h"
 
 void start() {
     printf("Please choose your action  :\n");
@@ -20,10 +20,12 @@ char choose_action() {
     return choice;
 }
 
+
 void switch_case_action(char chara, LlcShape* ShapeList){
     char char_type_form[100];
     char coordform[100];
     int* coordstab;
+    StringArray *TAB;
     TypeForm type_form;
     switch(chara){
         case('A'):
@@ -37,21 +39,21 @@ void switch_case_action(char chara, LlcShape* ShapeList){
                     coordstab = splitStringToArray(coordform," ").array;
                     add_to_last(ShapeList,create_point_shape(coordstab));
                     break;
-                /*case LINE:
-                    display_line((Line *) shape->realShape);
-                    break;
-                case SQUARE:
-                    display_square((Square *) shape->realShape);
-                    break;
-                case RECT:
-                    display_rect((Rectangle *) shape->realShape);
-                    break;
-                case POLYGON:
-                    display_polygon((Polygon *) shape->realShape);
-                    break;
-                case CIRCLE:
-                    display_circle((Circle *) shape->realShape);
-                    break;*/
+                    /*case LINE:
+                        display_line((Line *) shape->realShape);
+                        break;
+                    case SQUARE:
+                        display_square((Square *) shape->realShape);
+                        break;
+                    case RECT:
+                        display_rect((Rectangle *) shape->realShape);
+                        break;
+                    case POLYGON:
+                        display_polygon((Polygon *) shape->realShape);
+                        break;
+                    case CIRCLE:
+                        display_circle((Circle *) shape->realShape);
+                        break;*/
                 default:
                     break;
             }

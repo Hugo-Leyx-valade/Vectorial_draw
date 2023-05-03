@@ -15,5 +15,6 @@ typedef struct {
 
 StringArray splitStringToArray(const char *stringToSplit, const char *delimiter);
 
+int* tab_coord()
 
 #endif //VECTORIAL_DRAW_STRINGTOARRAY_H

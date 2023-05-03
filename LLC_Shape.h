@@ -5,6 +5,7 @@
 #include "Shapes.h"
 #include "Bool.h"
 #include <stdio.h>
+#include "stringToArray.h"
 
 #ifndef VECTORIAL_DRAW1_LLC_SHAPE_H
 #define VECTORIAL_DRAW1_LLC_SHAPE_H
