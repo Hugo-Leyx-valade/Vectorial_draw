@@ -38,10 +38,12 @@ int main() {
 //    printf("delete shape with id 3 and show list\n");
 //    deleteShapeFromLlc(List,3);
 //    display_llc(List);
-    AREA* area = create_area(5,5);
-    draw_area(area);
-    while(1);
-
+//    AREA* area = create_area(5,5);
+//    draw_area(area);
+//    while(1);
+    for(int i = 0 ; i<14 ; i++){
+        printf("%d ",i);
+    }
 
 
 
