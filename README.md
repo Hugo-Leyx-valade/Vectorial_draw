@@ -13,14 +13,18 @@ Télécharger le fichier _.zip_ contenant le projet.
 
 Pour lancer le projet éxécutez le simplement le _.exe_ situé dans le fichié "exe".   
 Ainsi le **_main.c_** se lance et éxécute le programme principal.
-Un menu s'affiche et vous propose de choisir entre plusieurs options :
 
-![image](menu.png "image")
+Pour le moment le main ne fait que tester les fonctions que l'on a crée pour les parties A et B du projet.
 
-Pour le moment seul les options A et B sont utilisables.
+* **FONCTIONS :**
 
-_A- Add a shape_ : Crée une shape et l'ajoute à la liste de toutes vos shapes.
+Chaque form a ses 3 fonctions principales : création, affichage, supression.
 
-_B- Pint shape's list_ : Affiche la liste de toutes les shapes.
+Fonctions qui sont ensuite utilisé par le module Shape qui gère la généricité de nos formes.
+Le module Shape a donc une fonction différente pour la création de chaque forme.
+Mais une seule fonction pour la supression ou l'affichage.
+
+On a ensuite creé une Llc grace a la généricité de Shape, pour pouvoir crée la liste de nos formes.
+
 
 

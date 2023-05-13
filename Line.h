@@ -1,14 +1,14 @@
 //
 // Created by hugol on 24/03/2023.
 //
+
+#ifndef VECTORIAL_DRAW_LINE_H
+#define VECTORIAL_DRAW_LINE_H
+
 #include "Point.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#ifndef VECTORIAL_DRAW_LINE_H
-#define VECTORIAL_DRAW_LINE_H
-
-
 
 typedef struct {
     Point *point_1;

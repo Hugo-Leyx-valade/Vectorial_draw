@@ -1,22 +1,52 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "Point.h"
-#include "Line.h"
-#include "Polygon.h"
-#include "Circle.h"
-#include "Square.h"
-#include "Shapes.h"
-#include "Rect.h"
-#include "Forms.h"
-#include "LLC_Shape.h"
 
+#include "Shapes.h"
+#include "LLCShape.h"
+#include "time.h"
+#include "Area.h"
+#include "Pixel.h"
 int main() {
-    LlcShape* shapelist = NULL ;
-    start();
-    char choice;
-    choice = choose_action();
-    switch_case_action(choice,shapelist);
-    display_point()
+
+//    printf("create a point with 5 | 10 coordinates\n");
+//    Shape* point = create_point_shape(5,10);
+//    printf("test display function\n");
+//    display_shape(point);
+//    printf("\n");
+//    printf("test delete function and try to display point after\n");
+//    delete_shape(point);
+//    display_shape(point);
+//    printf("\n\n");
+//    printf("create empty list\n");
+//    LlcShape* List = create_empty_llc();
+//    printf("create rectangle with 7 | 6 top left coordinates , 3 width and 4 height\n");
+//    Shape* rectangle = create_rectangle_shape(7,6,3,4);
+//    printf("add rectangle to list and display list\n");
+//    List = add_to_llc(List,rectangle);
+//    display_llc(List);
+//    printf("\n");
+//    printf("create circle with 9 | 3 center coordinates and 4 radius\n");
+//    Shape* Circle = create_circle_shape(9,3,4);
+//    printf("add circle to list and display list\n");
+//    List= add_to_llc(List,Circle);
+//    display_llc(List);
+//    printf("\n");
+//    printf("show shape with id 2\n");
+//    display_shape(getShapeById(List,2));
+//    printf("\n");
+//    printf("\n");
+//    printf("delete shape with id 3 and show list\n");
+//    deleteShapeFromLlc(List,3);
+//    display_llc(List);
+//    AREA* area = create_area(5,5);
+//    draw_area(area);
+//    while(1);
+    Pixel** pixel_tab = (Pixel**) malloc(sizeof (Pixel*));
+    Shape *square = create_square_shape(2,2,4);
+    int nb = 0 ;
+    pixel_square(square->realShape,pixel_tab,&nb);
+    afficher_form_test(pixel_tab,&nb);
+
     return 0;
 }

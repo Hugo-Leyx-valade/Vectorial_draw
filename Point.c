@@ -11,11 +11,14 @@ Point *create_point(int x1, int y1) {
     return createdPoint;
 }
 
-void display_point(Point *point) {
-    printf("POINT : %d %d", point->x1, point->y1);
+
+void display_point(Point* point){
+    if(point != NULL) {
+        printf("POINT : %d %d", point->x1, point->y1);
+    }
 }
 
-void delete_point(Point *point) {
-    free(point);
-    point = NULL;
+void delete_point(Point** point){
+    free(*point);
+    *point = NULL;
 }
