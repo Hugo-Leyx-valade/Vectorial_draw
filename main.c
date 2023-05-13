@@ -40,14 +40,14 @@ int main() {
 //    deleteShapeFromLlc(List,3);
 //    display_llc(List);
 
-    AREA* area = create_area(10,10);
+    AREA* area = create_area(20,20);
 
-    Pixel** pixel_tab = (Pixel**) malloc(5*sizeof (Pixel*));
-    Shape* point = create_point_shape(5,6);
-    Shape* point2 = create_point_shape(7,6);
+    Pixel** pixel_tab = (Pixel**) malloc(50*sizeof (Pixel*));
+    Shape* square = create_square_shape(10,10,5);
     int nb = 0 ;
-    pixel_point(point->realShape,pixel_tab,&nb);
-    pixel_point(point2->realShape,pixel_tab,&nb);
+
+
+    pixel_square(square->realShape,pixel_tab,&nb);
     afficher_form_test(area,pixel_tab,&nb);
     draw_area(area);
 

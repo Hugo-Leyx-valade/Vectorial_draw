@@ -3,7 +3,7 @@
 //
 #include "Shapes.h"
 #include "LLCShape.h"
-//#include "Pixel.h"
+#include "Pixel.h"
 #define SHAPE_MAX 100 // Nombre maximum de formes
 
 

@@ -53,5 +53,7 @@ void delete_area(AREA* area){
 
 void add_shape_to_area(AREA* area, Shape* shape){
     area->shapes  = add_to_llc(area->shapes,shape);
+    Pixel** pixel_tab= create_shape_to_pixel(shape,nb_pixel);
+
 }
 
