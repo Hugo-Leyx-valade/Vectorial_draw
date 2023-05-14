@@ -22,13 +22,13 @@ typedef struct pixel {
 
 Pixel *create_pixel(int px , int py); /* fait */
 void delete_pixel(Pixel *pixel); /* fait */
-void pixel_point(Point * shape, Pixel** pixel, int* nb_pixels); /* fait */
-void pixel_line(Line* shape, Pixel** pixel, int* nb_pixels);  /* fait */
-void pixel_square(Square * shape, Pixel** pixel, int* nb_pixels);  /* fait */
-void pixel_rect(Rectangle* shape, Pixel** pixel, int* nb_pixels);  /* fait */
-void pixel_circle(Circle * shape, Pixel** pixel, int* nb_pixels); /* fait */
-void pixel_polygon(Polygon * shape, Pixel** pixel, int* nb_pixels); /* fait */
-Pixel** create_shape_to_pixel(Shape* shape, int* nb_pixels,Pixel** pixel);
+void pixel_point(Point* shape, Pixel*** pixel, int* nb_pixels); /* fait */
+void pixel_line(Line* shape, Pixel*** pixel, int* nb_pixels);  /* fait */
+void pixel_square(Square * shape, Pixel*** pixel, int* nb_pixels);  /* fait */
+void pixel_rect(Rectangle* shape, Pixel*** pixel, int* nb_pixels);  /* fait */
+void pixel_circle(Circle * shape, Pixel*** pixel, int* nb_pixels); /* fait */
+void pixel_polygon(Polygon * shape, Pixel*** pixel, int* nb_pixels); /* fait */
+Pixel** create_shape_to_pixel(Shape* shape, int* nb_pixels,Pixel*** pixel);
 void delete_pixel_shape(Pixel** pixel, int nb_pixels);
 
 

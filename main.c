@@ -42,12 +42,15 @@ int main() {
 
     AREA* area = create_area(20,20);
 
-    Pixel** pixel_tab = (Pixel**) malloc(50*sizeof (Pixel*));
+    Pixel** pixel_tab = (Pixel**) malloc(sizeof (Pixel*));
     Shape* square = create_square_shape(10,10,5);
+    Shape* line = create_line_shape(5,5,10,10);
+    Shape* point = create_point_shape(5,5);
     int nb = 0 ;
 
-
-    pixel_square(square->realShape,pixel_tab,&nb);
+//    pixel_point(point->realShape,&pixel_tab,&nb);
+    pixel_line(line->realShape,&pixel_tab,&nb);
+//    pixel_square(square->realShape,&pixel_tab,&nb);
     afficher_form_test(area,pixel_tab,&nb);
     draw_area(area);
 
