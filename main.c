@@ -6,6 +6,7 @@
 #include "LLCShape.h"
 #include "time.h"
 #include "Area.h"
+//#include "Pixel.h"
 int main() {
 
 //    printf("create a point with 5 | 10 coordinates\n");
@@ -38,9 +39,23 @@ int main() {
 //    printf("delete shape with id 3 and show list\n");
 //    deleteShapeFromLlc(List,3);
 //    display_llc(List);
-    AREA* area = create_area(5,5);
-    draw_area(area);
-    while(1);
+
+    AREA* area = create_area(20,20);
+
+//    Pixel** pixel_tab = (Pixel**) malloc(sizeof (Pixel*));
+    Pixel** pixel_tab = NULL;
+    Shape* square = create_square_shape(10,10,5);
+    Shape* line = create_line_shape(5,5,10,10);
+    Shape* point = create_point_shape(5,5);
+    Shape* point2 = create_point_shape(6,6);
+    int nb = 0 ;
+
+//    pixel_point(point->realShape,&pixel_tab,&nb);
+//    pixel_point(point2->realShape,&pixel_tab,&nb);
+    pixel_line(line->realShape,&pixel_tab,&nb);
+//    pixel_square(square->realShape,&pixel_tab,&nb);
+    draw_area(area,pixel_tab,&nb);
+    print_area(area);
 
 
 
