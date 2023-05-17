@@ -200,13 +200,15 @@ void pixel_rect(Rectangle * shape, Pixel*** pixel, int* nb_pixels){
 void pixel_polygon(Polygon* shape, Pixel*** pixel, int* nb_pixels){
     for(int i = 0 ; i<shape->size-1 ; i++){
         Line* line = create_line(shape->array_of_point[i],shape->array_of_point[i+1]);
-        *pixel = realloc(pixel,*nb_pixels);
         pixel_line(line,pixel,nb_pixels);
-        delete_line(&line);
+        free(line);
     }
+    Line* line = create_line(shape->array_of_point[0],shape->array_of_point[(shape->size)-1]);
+    pixel_line(line,pixel,nb_pixels);
+    free(line);
 }
 
-Pixel** create_shape_to_pixel(Shape* shape, int* nb_pixels,Pixel*** pixel_tab){
+Pixel** create_shape_to_pixel(Shape* shape,Pixel*** pixel_tab, int* nb_pixels){
     switch (shape->type) {
         case POINT:
             pixel_point(shape->realShape, pixel_tab, nb_pixels);

@@ -49,10 +49,23 @@ int main() {
     Shape* point = create_point_shape(5,5);
     Shape* point2 = create_point_shape(6,6);
     int nb = 0 ;
+    int coordtab[6];
+    coordtab[0]=1;
+    coordtab[1]=2;
+    coordtab[2]=5;
+    coordtab[3]=5;
+    coordtab[4]=8;
+    coordtab[5]=2;
+    CoordTab* coords= (CoordTab*) malloc(sizeof(CoordTab));
+    coords->coords = coordtab ;
+    coords->size=6;
+    Shape* polyg = create_polygon_shape(coords);
+    create_shape_to_pixel(polyg,&pixel_tab,&nb);
+
 
 //    pixel_point(point->realShape,&pixel_tab,&nb);
 //    pixel_point(point2->realShape,&pixel_tab,&nb);
-    pixel_line(line->realShape,&pixel_tab,&nb);
+//    pixel_line(line->realShape,&pixel_tab,&nb);
 //    pixel_square(square->realShape,&pixel_tab,&nb);
     draw_area(area,pixel_tab,&nb);
     print_area(area);
