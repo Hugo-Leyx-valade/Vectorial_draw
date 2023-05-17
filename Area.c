@@ -17,20 +17,31 @@ AREA* create_area(unsigned int width, unsigned int height){
     area->nb_shape = 0;
     return area;
 }
-void draw_area(AREA* area){
+void print_area(AREA* area){
     for(int i = 0 ; i<area->height ; i++){
         for(int j = 0 ; j<area->width ; j++){
-            printf("%d   ", area->mat[i][j]);
+            if(area->mat[i][j]==0){
+                printf(". ");
+            }else{
+                printf("# ");
+            }
+
         }
         printf("\n");
     }
 }
 
+void draw_area(AREA* area, Pixel** pixel,int *nb_pixel){
+    int pix=0;
+    for(pix;pix<*nb_pixel;pix++){
+        area->mat[pixel[pix]->py-1][pixel[pix]->px-1] = TRUE;
+    }
+}
 
 void clear_area(AREA* area){
     for(int i = 0 ; i<area->height ; i++){
         for(int j = 0 ; j<area->width ; j++){
-            area->mat[i][j] = 0;
+            area->mat[i][j] = FALSE;
         }
     }
 }
@@ -51,8 +62,10 @@ void delete_area(AREA* area){
     free(area);
 }
 
-void add_shape_to_area(AREA* area, Shape* shape){
+void add_shape_to_area(AREA* area, Shape* shape,Pixel*** pixel){
+    int nb_pixel = 0;
     area->shapes  = add_to_llc(area->shapes,shape);
+
     //Pixel** pixel_tab= create_shape_to_pixel(shape,nb_pixel);
 
 }

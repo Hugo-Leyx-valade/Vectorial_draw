@@ -3,7 +3,7 @@
 //
 #include "Shapes.h"
 #include "LLCShape.h"
-//#include "Pixel.h"
+#include "Pixel.h"
 #define SHAPE_MAX 100 // Nombre maximum de formes
 
 
@@ -16,9 +16,9 @@ typedef struct area {
 }AREA;
 
 AREA* create_area(unsigned int width, unsigned int height);
-void add_shape_to_area(AREA* area, Shape* shape);
+void add_shape_to_area(AREA* area, Shape* shape,Pixel*** pixel);
 void clear_area(AREA* area);
 void erase_area(AREA* area);
 void delete_area(AREA* area);
-void draw_area(AREA* area);
+void draw_area(AREA* area, Pixel** pixel,int *nb_pixel);
 void print_area(AREA* area);

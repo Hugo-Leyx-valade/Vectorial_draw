@@ -15,11 +15,15 @@ void delete_pixel(Pixel* pixel){
 }
 
 void pixel_point(Point* shape, Pixel*** pixel, int* nb_pixels){
-    *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-    *pixel[(*nb_pixels)++] = create_pixel(shape->x1 , shape->y1);
+    Pixel** pixeltemp = *pixel;
+    pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+    pixeltemp[(*nb_pixels)++] = create_pixel(shape->x1 , shape->y1);
+    *pixel=pixeltemp;
 }
 
 void pixel_line(Line* shape, Pixel*** pixel, int* nb_pixels){
+    Pixel** pixeltemp = *pixel;
+
     int longx=0;
     int longy=0;
     if(shape->point_1->x1 < shape->point_2->x1){
@@ -65,8 +69,8 @@ void pixel_line(Line* shape, Pixel*** pixel, int* nb_pixels){
         if(longx>(sqrt(longy*longy))) {
             for (int i = 0; i < nbseg; i++) {
                 for (int j = 0; j < tabsegs[i]; j++) {
-                    *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-                    *pixel[(*nb_pixels)++] = create_pixel(x, y);
+                    pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+                    pixeltemp[(*nb_pixels)++] = create_pixel(x, y);
                     x++;
                 }
                 y--;
@@ -74,8 +78,8 @@ void pixel_line(Line* shape, Pixel*** pixel, int* nb_pixels){
         }else{
             for (int i = 0; i < nbseg; i++) {
                 for (int j = 0; j < tabsegs[i]; j++) {
-                    *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-                    *pixel[(*nb_pixels)++] = create_pixel(x, y);
+                    pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+                    pixeltemp[(*nb_pixels)++] = create_pixel(x, y);
                     y--;
                 }
                 x++;
@@ -85,8 +89,8 @@ void pixel_line(Line* shape, Pixel*** pixel, int* nb_pixels){
         if(longx>(sqrt(longy*longy))){
             for(int i=0;i<nbseg;i++){
                 for(int j=0;j<tabsegs[i];j++){
-                    *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-                    *pixel[(*nb_pixels)++] = create_pixel(x , y);
+                    pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+                    pixeltemp[(*nb_pixels)++] = create_pixel(x , y);
                     x++;
                 }
                 y++;
@@ -94,33 +98,35 @@ void pixel_line(Line* shape, Pixel*** pixel, int* nb_pixels){
         }else{
             for(int i=0;i<nbseg;i++){
                 for(int j=0;j<tabsegs[i];j++){
-                    *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-                    *pixel[(*nb_pixels)++] = create_pixel(x , y);
+                    pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+                    pixeltemp[(*nb_pixels)++] = create_pixel(x , y);
                     y++;
                 }
                 x++;
             }
         }
     }
+    *pixel=pixeltemp;
 }
 
 
 void pixel_circle(Circle* shape, Pixel*** pixel, int* nb_pixels){
+    Pixel** pixeltemp = *pixel;
     int x = 0;
 //    Circle *circle = (Circle*) shape->realShape;
     int y = shape->radius;
     int d = shape->radius - 1 ;
 //    nb_pixels = 0;
     while (y>=x){
-        *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+8)*sizeof(Pixel*));
-        *pixel[(*nb_pixels)++] = create_pixel((shape->center->x1)+x , (shape->center->y1)+y);
-        *pixel[(*nb_pixels)++] = create_pixel((shape->center->x1)+y , (shape->center->y1)+x);
-        *pixel[(*nb_pixels)++] = create_pixel((shape->center->x1)-x , (shape->center->y1)+y);
-        *pixel[(*nb_pixels)++] = create_pixel((shape->center->x1)-y , (shape->center->y1)+x);
-        *pixel[(*nb_pixels)++] = create_pixel((shape->center->x1)+x , (shape->center->y1)-y);
-        *pixel[(*nb_pixels)++] = create_pixel((shape->center->x1)+y , (shape->center->y1)-x);
-        *pixel[(*nb_pixels)++] = create_pixel((shape->center->x1)-x , (shape->center->y1)-y);
-        *pixel[(*nb_pixels)++] = create_pixel((shape->center->x1)-y , (shape->center->y1)-x);
+        pixeltemp= realloc(pixeltemp,((*nb_pixels)+8)*sizeof(Pixel*));
+        pixeltemp[(*nb_pixels)++] = create_pixel((shape->center->x1)+x , (shape->center->y1)+y);
+        pixeltemp[(*nb_pixels)++] = create_pixel((shape->center->x1)+y , (shape->center->y1)+x);
+        pixeltemp[(*nb_pixels)++] = create_pixel((shape->center->x1)-x , (shape->center->y1)+y);
+        pixeltemp[(*nb_pixels)++] = create_pixel((shape->center->x1)-y , (shape->center->y1)+x);
+        pixeltemp[(*nb_pixels)++] = create_pixel((shape->center->x1)+x , (shape->center->y1)-y);
+        pixeltemp[(*nb_pixels)++] = create_pixel((shape->center->x1)+y , (shape->center->y1)-x);
+        pixeltemp[(*nb_pixels)++] = create_pixel((shape->center->x1)-x , (shape->center->y1)-y);
+        pixeltemp[(*nb_pixels)++] = create_pixel((shape->center->x1)-y , (shape->center->y1)-x);
         if(d>=2*x){
             d -= 2*x+1;
             x++;
@@ -133,32 +139,36 @@ void pixel_circle(Circle* shape, Pixel*** pixel, int* nb_pixels){
             x++;
         }
     }
+    *pixel=pixeltemp;
 }
 
 void pixel_square(Square * shape, Pixel*** pixel, int* nb_pixels){
+    Pixel** pixeltemp = *pixel;
     Point *point_1 =shape->top_left;
     Point *point_2 = create_point(point_1->x1+shape->length,point_1->y1);
     Point *point_3 = create_point(point_2->x1 , point_2->y1+shape->length);
     Point *point_4 = create_point(point_3->x1-shape->length, point_3->y1);
     for(int i = 0 ; i<point_2->x1-point_1->x1 ; i++){
-        *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-        *pixel[(*nb_pixels)++] = create_pixel(point_1->x1+i , point_1->y1);
+        pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+        pixeltemp[(*nb_pixels)++] = create_pixel(point_1->x1+i , point_1->y1);
     }
     for(int i = 0 ; i<point_3->y1-point_2->y1 ; i++){
-        *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-        *pixel[(*nb_pixels)++] = create_pixel(point_2->x1, point_2->y1+i);
+        pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+        pixeltemp[(*nb_pixels)++] = create_pixel(point_2->x1, point_2->y1+i);
     }
     for(int i = 0 ; i<point_3->x1-point_4->x1 ; i++){
-        *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-        *pixel[(*nb_pixels)++] = create_pixel(point_3->x1-i , point_3->y1);
+        pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+        pixeltemp[(*nb_pixels)++] = create_pixel(point_3->x1-i , point_3->y1);
     }
     for(int i = 0 ; i<point_4->y1-point_1->y1 ; i++){
-        *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-        *pixel[(*nb_pixels)++] = create_pixel(point_4->x1 , point_4->y1-i);
+        pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+        pixeltemp[(*nb_pixels)++] = create_pixel(point_4->x1 , point_4->y1-i);
     }
+    *pixel=pixeltemp;
 }
 
 void pixel_rect(Rectangle * shape, Pixel*** pixel, int* nb_pixels){
+    Pixel** pixeltemp = *pixel;
     Point *point_1 =shape->top_left;
     Point *point_2 =shape->top_left;
     Point *point_3 =shape->top_left;
@@ -168,21 +178,22 @@ void pixel_rect(Rectangle * shape, Pixel*** pixel, int* nb_pixels){
     point_3->y1 += shape->height;
     point_4->y1 += shape->height;
     for(int i = 0 ; i<point_2->x1-point_1->x1 ; i++){
-        *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-        *pixel[(*nb_pixels)++] = create_pixel(point_1->x1+i , point_1->y1);
+        pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+        pixeltemp[(*nb_pixels)++] = create_pixel(point_1->x1+i , point_1->y1);
     }
     for(int i = 0 ; i<point_3->y1-point_2->y1 ; i++){
-        *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-        *pixel[(*nb_pixels)++] = create_pixel(point_2->x1, point_2->y1+i);
+        pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+        pixeltemp[(*nb_pixels)++] = create_pixel(point_2->x1, point_2->y1+i);
     }
     for(int i = 0 ; i<point_3->x1-point_4->x1 ; i++){
-        *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-        *pixel[(*nb_pixels)++] = create_pixel(point_3->x1-i , point_3->y1);
+        pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+        pixeltemp[(*nb_pixels)++] = create_pixel(point_3->x1-i , point_3->y1);
     }
     for(int i = 0 ; i<point_4->y1-point_1->y1 ; i++){
-        *pixel = (Pixel**) realloc(*pixel,((*nb_pixels)+1)*sizeof(Pixel*));
-        *pixel[(*nb_pixels)++] = create_pixel(point_4->x1 , point_4->y1-i);
+        pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
+        pixeltemp[(*nb_pixels)++] = create_pixel(point_4->x1 , point_4->y1-i);
     }
+    *pixel=pixeltemp;
 }
 
 
@@ -218,14 +229,7 @@ Pixel** create_shape_to_pixel(Shape* shape, int* nb_pixels,Pixel*** pixel_tab){
         default:
             break;
     }
+    return *pixel_tab;
 }
-
-void afficher_form_test(AREA* area, Pixel** pixel,int *nb_pixel){
-    int pix=0;
-    for(pix;pix<*nb_pixel;pix++){
-        area->mat[pixel[pix]->py-1][pixel[pix]->px-1] = TRUE;
-    }
-}
-
 
 void delete_pixel_shape(Pixel** pixel, int nb_pixels);
