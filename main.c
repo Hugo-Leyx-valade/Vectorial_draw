@@ -40,15 +40,12 @@ int main() {
 //    deleteShapeFromLlc(List,3);
 //    display_llc(List);
 
-    AREA* area = create_area(20,20);
+    AREA* area = create_area(50,20);
 
-//    Pixel** pixel_tab = (Pixel**) malloc(sizeof (Pixel*));
-    Pixel** pixel_tab = NULL;
-    Shape* square = create_square_shape(10,10,5);
-    Shape* line = create_line_shape(5,5,10,10);
-    Shape* point = create_point_shape(5,5);
-    Shape* point2 = create_point_shape(6,6);
-    int nb = 0 ;
+    Shape* square = create_square_shape(6,2,3);
+    Shape* square2 = create_square_shape(11,2,3);
+    Shape* line = create_line_shape(2,2,2,5);
+    Shape* line2 = create_line_shape(2,5,4,5);
     int coordtab[6];
     coordtab[0]=1;
     coordtab[1]=2;
@@ -60,16 +57,17 @@ int main() {
     coords->coords = coordtab ;
     coords->size=6;
     Shape* polyg = create_polygon_shape(coords);
-    create_shape_to_pixel(polyg,&pixel_tab,&nb);
+    add_shape_to_area(area,square);
+    add_shape_to_area(area,square2);
+//    add_shape_to_area(area,polyg);
+    add_shape_to_area(area,line);
+    add_shape_to_area(area,line2);
 
-
-//    pixel_point(point->realShape,&pixel_tab,&nb);
-//    pixel_point(point2->realShape,&pixel_tab,&nb);
-//    pixel_line(line->realShape,&pixel_tab,&nb);
-//    pixel_square(square->realShape,&pixel_tab,&nb);
-    draw_area(area,pixel_tab,&nb);
+    draw_area(area);
     print_area(area);
-
+    delete_shape_from_area(area,2);
+    draw_area(area);
+    print_area(area);
 
 
 

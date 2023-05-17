@@ -234,4 +234,8 @@ Pixel** create_shape_to_pixel(Shape* shape,Pixel*** pixel_tab, int* nb_pixels){
     return *pixel_tab;
 }
 
-void delete_pixel_shape(Pixel** pixel, int nb_pixels);
+void delete_pixels(Pixel*** pixel, int nb_pixels){
+    for(int pix=0;pix<nb_pixels;pix++) {
+        delete_pixel((*pixel)[pix]);
+    }
+}

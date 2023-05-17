@@ -29,10 +29,8 @@ void pixel_rect(Rectangle* shape, Pixel*** pixel, int* nb_pixels);  /* fait */
 void pixel_circle(Circle * shape, Pixel*** pixel, int* nb_pixels); /* fait */
 void pixel_polygon(Polygon * shape, Pixel*** pixel, int* nb_pixels); /* fait */
 Pixel** create_shape_to_pixel(Shape* shape,Pixel*** pixel, int* nb_pixels);/* fait(inshallah)*/
-void delete_pixel_shape(Pixel** pixel, int nb_pixels);
+void delete_pixels(Pixel*** pixel, int nb_pixels);
 
-
-//void afficher_form_test(AREA* area, Pixel** pixel,int *nb_pixel);
 
 
 
