@@ -16,9 +16,10 @@ typedef struct area {
 }AREA;
 
 AREA* create_area(unsigned int width, unsigned int height);
-void add_shape_to_area(AREA* area, Shape* shape,Pixel*** pixel);
+void add_shape_to_area(AREA* area, Shape* shape);
 void clear_area(AREA* area);
 void erase_area(AREA* area);
 void delete_area(AREA* area);
-void draw_area(AREA* area, Pixel** pixel,int *nb_pixel);
+void draw_area(AREA* area);
 void print_area(AREA* area);
+void delete_shape_from_area(AREA* area, unsigned int id_shape);

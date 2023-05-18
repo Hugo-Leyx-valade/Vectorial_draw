@@ -31,10 +31,17 @@ void print_area(AREA* area){
     }
 }
 
-void draw_area(AREA* area, Pixel** pixel,int *nb_pixel){
-    int pix=0;
-    for(pix;pix<*nb_pixel;pix++){
-        area->mat[pixel[pix]->py-1][pixel[pix]->px-1] = TRUE;
+void draw_area(AREA* area){
+    Pixel** pixel_tab = NULL;
+    int nb_pixels=0;
+    LlcShape* tempLlc = area->shapes;
+    for(int counter=0;counter<area->nb_shape;counter++){
+        create_shape_to_pixel(tempLlc->value,&pixel_tab,&nb_pixels);
+        tempLlc=tempLlc->next;
+    }
+
+    for(int pix=0;pix<nb_pixels;pix++){
+        area->mat[pixel_tab[pix]->py-1][pixel_tab[pix]->px-1] = TRUE;
     }
 }
 
@@ -62,11 +69,13 @@ void delete_area(AREA* area){
     free(area);
 }
 
-void add_shape_to_area(AREA* area, Shape* shape,Pixel*** pixel){
-    int nb_pixel = 0;
+void add_shape_to_area(AREA* area, Shape* shape){
     area->shapes  = add_to_llc(area->shapes,shape);
-
-    //Pixel** pixel_tab= create_shape_to_pixel(shape,nb_pixel);
-
+    area->nb_shape++;
 }
 
+void delete_shape_from_area(AREA* area, unsigned int id_shape){
+    clear_area(area);
+    deleteShapeFromLlc(area->shapes,id_shape);
+    area->nb_shape--;
+}
