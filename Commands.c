@@ -24,6 +24,7 @@ void action(int* exit_status,AREA* area) {
         case 'B':
             printf("Saisir l'id de la forme: ");
             scanf("%d",&nb);
+            fflush(stdin);
             delete_shape_from_area(area,nb);
             break;
         case 'C':
@@ -44,8 +45,10 @@ void action(int* exit_status,AREA* area) {
         case 'H':
             printf("aide");
             break;
-        default:
+        case 'I':
             *exit_status=1;
+        default:
+            printf("commande non reconnu\n");
             break;
 
     }
@@ -120,6 +123,7 @@ void action_add_form(AREA* area ) {
             printf("retrun\n");
             break;
         default:
+            printf("commande non reconnu\n");
             break;
 
     }
