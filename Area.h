@@ -1,7 +1,6 @@
 //
 // Created by hugol on 28/04/2023.
 //
-#include "Shapes.h"
 #include "LLCShape.h"
 #include "Pixel.h"
 #define SHAPE_MAX 100 // Nombre maximum de formes
