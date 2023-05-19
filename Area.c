@@ -82,4 +82,7 @@ void delete_shape_from_area(AREA* area, unsigned int id_shape){
     clear_area(area);
     deleteShapeFromLlc(area->shapes,id_shape);
     area->nb_shape--;
+    if(area->nb_shape==0){
+        area->shapes=NULL;
+    }
 }

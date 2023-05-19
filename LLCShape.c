@@ -59,12 +59,14 @@ int length_llc(LlcShape* cell){
 }
 
 void display_llc(LlcShape* cell){
-    LlcShape* temp = cell;
-    while(temp != NULL){
-        printf("%d : ",temp->value->id_shape);
-        display_shape(temp->value);
-        printf("\n");
-        temp = temp->next;
+    if(llc_empty(cell)==FALSE){
+        LlcShape* temp = cell;
+        while(temp != NULL){
+            printf("%d : ",temp->value->id_shape);
+            display_shape(temp->value);
+            printf("\n");
+            temp = temp->next;
+        }
     }
 }
 
