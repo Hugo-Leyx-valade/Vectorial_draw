@@ -42,7 +42,7 @@ void draw_area(AREA* area){
 
     for(int pix=0;pix<nb_pixels;pix++){
         if(pixel_tab[pix]->py<area->width && pixel_tab[pix]->px < area->height){
-            area->mat[pixel_tab[pix]->py-1][pixel_tab[pix]->px-1] = TRUE;
+            area->mat[(pixel_tab[pix]->py)-1][(pixel_tab[pix]->px)-1] = TRUE;
         }
 
     }
@@ -58,10 +58,13 @@ void clear_area(AREA* area){
 
 
 void erase_area(AREA* area){
+    LlcShape* templlc = area->shapes;
     for(int i = 0 ; i<area->nb_shape ; i++){
-        deleteShapeFromLlc(area->shapes,i);
+        deleteShapeFromLlc(area->shapes,templlc->value->id_shape);
+        templlc=templlc->next;
     }
     area->nb_shape=0;
+    area->shapes=NULL;
 }
 
 

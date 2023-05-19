@@ -48,7 +48,7 @@ Shape *create_circle_shape(int px, int py, int radius) {
 }
 
 Shape *create_polygon_shape(CoordTab* CoordinateArray) {
-    Shape *shp = create_empty_shape(POLYGON);;
+    Shape *shp = create_empty_shape(POLYGON);
     shp->realShape = create_polygone(CoordinateArray);
     return shp;
 }
