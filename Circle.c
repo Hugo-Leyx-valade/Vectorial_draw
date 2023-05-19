@@ -14,7 +14,7 @@ Circle* create_circle(Point* center, int radius){
 
 void display_circle(Circle *circle) {
     if (circle != NULL) {
-        printf("Circle : Center - %d %d |  Radius : %d", circle->center->x1, circle->center->y1, circle->radius);
+        printf("Circle : Center : %d %d |  Radius : %d", circle->center->x1, circle->center->y1, circle->radius);
     }
 }
 
