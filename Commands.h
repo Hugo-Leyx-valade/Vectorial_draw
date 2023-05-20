@@ -9,5 +9,5 @@
 
 void action(int* exit_stats,AREA* area);
 void action_add_form(AREA* area);
-
+void print_help();
 #endif //VECTORIAL_DRAW1_COMMANDS_H

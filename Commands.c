@@ -48,6 +48,7 @@ void action(int* exit_status,AREA* area) {
         case 'I':
             *exit_status=1;
             printf("A bientot !");
+            break;
         default:
             printf("commande non reconnu\n");
             break;
@@ -120,11 +121,40 @@ void action_add_form(AREA* area ) {
             add_shape_to_area(area,polygon);
             break;
         case '7':
-            printf("retrun\n");
+            print_help();
             break;
         default:
             printf("commande non reconnu\n");
             break;
 
     }
+}
+
+void print_help(){
+    printf("A - Ajouter forme :"
+           "\tPoint x y , : permet de creer une point de coordonnees (x,y) ou x et y sont des entier compris dans la taille de la zone de dessin. \n"
+           "\n"
+           "\tLigne x1 y1 x2 y2 : creer une ligne entre les deux points renseigner par l'utilisateur. \n"
+           "\n"
+           "\tCarré x y length : creer un carre partant du point en haut a gauche de coordonnees (x,y) \n\tet dont la taille de chaque cote est length, tous les parametre doivent etre des entier compris dans la taille de la zone de dessin. \n"
+           "\n"
+           "\tRectangle x y width heigth : creer un rectangle partant du point en haut a gauche de coordonnees (x,y) \n\tet dont la longueur est de width et la hauteur de heigth, tous les parametre doivent etre des entier compris dans la taille de la zone de dessin. \n"
+           "\n"
+           "\tCercle x y radius : creer un cercle de centre (x,y) et de rayon radius tous les parametre doivent etre des entier compris dans la taille de la zone de dessin. \n"
+           "\n"
+           "\tPolygon x1 y1 x2 y2 x3 y3. . .xn yn : creer un polygone de n points de coordonnees (xi,yi ; avec 0<i<=n).  \n\tIci il faut simplement renseigner les coordonnees des points car  le polygone est un ensembles de Line entre deux points.   \n"
+           "\n"
+           "B - Supprimer une forme : permet de supprimer une forme grace a sont id. Chaque forme a un id qui lui est propre comme la « key » en SQL. \nCet id permet de retrouver la forme que l utilisateur veut supprimer et ainsi elle ne s affichera plus ni lors du Liste ni lors du Plot . \n"
+           "\n"
+           "C - Afficher la liste des formes : permet de lister toutes les formes que l'utilisateur a cree et qui n on pas ete supprimer, \nc'est-a-dire l'ensembles des formes qui se dessinerons au prochain Plot.\n"
+           "\n"
+           "D - Ajoute les formes sur l'ecran : permet d'ajouter les formes non ajouter au tableau."
+           "\n"
+           "E - Affiche l'ecran : affiche la grille de dessin ainsi que les formes renseigner par l'utilisateur, \nc est a partir de maintenant que l'utilisateur a un retour visuel de ce qu il a cree.\n"
+           "\n"
+           "F - Effacer l'ecran : permet d'enlever les formes du tableau sans les supprimer." "\n"
+           "G - Effacer toute les formes : bien plus radical que Delete id cette commande permet d'effacer toutes les formes et de tout recommencer à zero."
+           "\n"
+           "I - Arreter le programme : cette commande permet simplement à l'utilisateur de quitter l'executable en cours.\n"
+           "\n");
 }
