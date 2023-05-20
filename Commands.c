@@ -43,7 +43,7 @@ void action(int* exit_status,AREA* area) {
             erase_area(area);
             break;
         case 'H':
-            printf("aide");
+            print_help();
             break;
         case 'I':
             *exit_status=1;
@@ -121,7 +121,6 @@ void action_add_form(AREA* area ) {
             add_shape_to_area(area,polygon);
             break;
         case '7':
-            print_help();
             break;
         default:
             printf("commande non reconnu\n");
