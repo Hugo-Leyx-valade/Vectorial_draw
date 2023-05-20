@@ -47,6 +47,7 @@ void action(int* exit_status,AREA* area) {
             break;
         case 'I':
             *exit_status=1;
+            printf("A bientot !");
         default:
             printf("commande non reconnu\n");
             break;
@@ -114,8 +115,7 @@ void action_add_form(AREA* area ) {
             printf("Saisir les points: x1 y1 x2 y1...: ");
             gets(coords_polygon);
             reelcoords_polygon = splitStringToArray(coords_polygon," ");
-            CoordTab* coords;
-            coords = StringArrayToCoordTab(&reelcoords_polygon);
+            CoordTab* coords = StringArrayToCoordTab(&reelcoords_polygon);
             Shape* polygon = create_polygon_shape(coords);
             add_shape_to_area(area,polygon);
             break;

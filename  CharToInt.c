@@ -16,14 +16,13 @@ Bool isnumber(StringArray* stringArray){
 }
 
 CoordTab* StringArrayToCoordTab(StringArray* stringArray){
-    int tab[stringArray->size];
-    if(isnumber(stringArray)==TRUE){
-        for(int i=0;i<stringArray->size;i++){
-            tab[i]=atoi(stringArray->array[i]);
-        }
-    }
     CoordTab* coordTab = (CoordTab*) malloc(sizeof(CoordTab));
     coordTab->size= stringArray->size;
-    coordTab->coords=tab;
+    coordTab->coords = (int*) malloc(coordTab->size*sizeof(int) );
+    if(isnumber(stringArray)==TRUE){
+        for(int i=0;i<stringArray->size;i++){
+            coordTab->coords[i]=atoi(stringArray->array[i]);
+        }
+    }
     return coordTab;
 }

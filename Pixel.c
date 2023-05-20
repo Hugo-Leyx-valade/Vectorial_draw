@@ -145,9 +145,9 @@ void pixel_circle(Circle* shape, Pixel*** pixel, int* nb_pixels){
 void pixel_square(Square * shape, Pixel*** pixel, int* nb_pixels){
     Pixel** pixeltemp = *pixel;
     Point *point_1 =shape->top_left;
-    Point *point_2 = create_point(point_1->x1+shape->length,point_1->y1);
-    Point *point_3 = create_point(point_2->x1 , point_2->y1+shape->length);
-    Point *point_4 = create_point(point_3->x1-shape->length, point_3->y1);
+    Point *point_2 = create_point((point_1->x1+shape->length)-1,point_1->y1);
+    Point *point_3 = create_point((point_2->x1)-1 , (point_2->y1+shape->length)-1);
+    Point *point_4 = create_point(point_3->x1-shape->length, (point_3->y1)-1);
     for(int i = 0 ; i<point_2->x1-point_1->x1 ; i++){
         pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
         pixeltemp[(*nb_pixels)++] = create_pixel(point_1->x1+i , point_1->y1);
@@ -169,14 +169,10 @@ void pixel_square(Square * shape, Pixel*** pixel, int* nb_pixels){
 
 void pixel_rect(Rectangle * shape, Pixel*** pixel, int* nb_pixels){
     Pixel** pixeltemp = *pixel;
-    Point *point_1 =shape->top_left;
-    Point *point_2 =shape->top_left;
-    Point *point_3 =shape->top_left;
-    Point *point_4 =shape->top_left;
-    point_2->x1 += shape->width;
-    point_3->x1 += shape->width;
-    point_3->y1 += shape->height;
-    point_4->y1 += shape->height;
+    Point* point_1 =shape->top_left;
+    Point* point_2 = create_point((point_1->x1+shape->width)-1,point_1->y1);
+    Point* point_3 = create_point((point_1->x1+shape->width)-1,(point_2->y1+shape->height)-1);
+    Point* point_4 = create_point(point_1->x1,(point_3->y1)-1);
     for(int i = 0 ; i<point_2->x1-point_1->x1 ; i++){
         pixeltemp= realloc(pixeltemp,((*nb_pixels)+1)*sizeof(Pixel*));
         pixeltemp[(*nb_pixels)++] = create_pixel(point_1->x1+i , point_1->y1);
