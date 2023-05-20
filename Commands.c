@@ -13,7 +13,7 @@ void action(int* exit_status,AREA* area) {
         case 'A':
             printf("        1 : Point\n");
             printf("        2 : Ligne\n");
-            printf("        3 : Carré\n");
+            printf("        3 : Carre\n");
             printf("        4 : Rectangle\n");
             printf("        5 : Cercle\n");
             printf("        6 : Polygone\n");
@@ -25,6 +25,7 @@ void action(int* exit_status,AREA* area) {
             printf("Saisir l'id de la forme: ");
             scanf("%d",&nb);
             fflush(stdin);
+            if(nb)
             delete_shape_from_area(area,nb);
             break;
         case 'C':
@@ -135,7 +136,7 @@ void print_help(){
            "\n"
            "\tLigne x1 y1 x2 y2 : creer une ligne entre les deux points renseigner par l'utilisateur. \n"
            "\n"
-           "\tCarré x y length : creer un carre partant du point en haut a gauche de coordonnees (x,y) \n\tet dont la taille de chaque cote est length, tous les parametre doivent etre des entier compris dans la taille de la zone de dessin. \n"
+           "\tCarre x y length : creer un carre partant du point en haut a gauche de coordonnees (x,y) \n\tet dont la taille de chaque cote est length, tous les parametre doivent etre des entier compris dans la taille de la zone de dessin. \n"
            "\n"
            "\tRectangle x y width heigth : creer un rectangle partant du point en haut a gauche de coordonnees (x,y) \n\tet dont la longueur est de width et la hauteur de heigth, tous les parametre doivent etre des entier compris dans la taille de la zone de dessin. \n"
            "\n"
