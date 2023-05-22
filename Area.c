@@ -59,7 +59,7 @@ void clear_area(AREA* area){
 
 void erase_area(AREA* area){
     LlcShape* templlc = area->shapes;
-    for(int i = 0 ; i<area->nb_shape ; i++){
+    for(int i = 1 ; i<area->nb_shape ; i++){
         deleteShapeFromLlc(area->shapes,templlc->value->id_shape);
         templlc=templlc->next;
     }
