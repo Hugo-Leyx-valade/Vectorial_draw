@@ -41,7 +41,7 @@ void draw_area(AREA* area){
     }
 
     for(int pix=0;pix<nb_pixels;pix++){
-        if(pixel_tab[pix]->py<area->width && pixel_tab[pix]->px < area->height){
+        if(pixel_tab[pix]->py<area->width+1 && pixel_tab[pix]->px < area->height+1){
             area->mat[(pixel_tab[pix]->py)-1][(pixel_tab[pix]->px)-1] = TRUE;
         }
 
