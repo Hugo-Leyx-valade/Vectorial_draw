@@ -14,7 +14,6 @@
 #include "Square.h"
 #include "Circle.h"
 #include "Polygon.h"
-#include "include.h"
 
 
 #define maxShapes 100

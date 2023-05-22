@@ -2,7 +2,7 @@
 // Created by hugol on 24/03/2023.
 //
 
-#include "include.h"
+#include "Forms.h"
 
 TypeForm StringToTypeForm(char* form){
     if(strcmp(form,"POINT")==0){
