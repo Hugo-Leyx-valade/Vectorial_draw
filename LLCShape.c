@@ -82,10 +82,10 @@ Shape* getShapeById(LlcShape* cell, unsigned int id){
 
 void deleteShapeFromLlc(LlcShape* cell,unsigned int id){
     LlcShape* temp = cell;
-    while((temp != NULL)){
+    while((temp->next != NULL)){
         temp = temp->next;
     }
-    if(temp->value->id_shape>=id){
+    if((temp->value->id_shape)>=(id)){
         if(temp->value->id_shape != id){
             while((temp != NULL) && (temp->next->value->id_shape != id)){
                 temp = temp->next;
