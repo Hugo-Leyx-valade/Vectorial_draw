@@ -25,7 +25,6 @@ void action(int* exit_status,AREA* area) {
             printf("Saisir l'id de la forme: ");
             scanf("%d",&nb);
             fflush(stdin);
-            if(nb)
             delete_shape_from_area(area,nb);
             break;
         case 'C':

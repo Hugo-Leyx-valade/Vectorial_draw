@@ -80,26 +80,19 @@ Shape* getShapeById(LlcShape* cell, unsigned int id){
     return temp->value;
 }
 
-void deleteShapeFromLlc(LlcShape* cell,unsigned int id){
-    LlcShape* temp = cell;
-    while((temp->next != NULL) && (temp->next->value->id_shape != id)){
-        temp = temp->next;
+void deleteShapeFromLlc(LlcShape** cell,unsigned int id){
+    LlcShape* temp = *cell;
+    if((*cell)->value->id_shape==id){
+        temp=(*cell)->next;
+        delete_shape((*cell)->value);
+        (*cell)=temp;
+    }else{
+        while((temp->next != NULL) && (temp->next->value->id_shape != id)){
+            temp = temp->next;
+        }
+        if(temp->next!=NULL && temp->next->value->id_shape == id){
+            delete_shape(temp->next->value);
+            temp->next=temp->next->next;
+        }
     }
-    if(temp->next!=NULL && temp->next->value->id_shape == id){
-        delete_shape(temp->next->value);
-        temp->next=temp->next->next;
-    }
-//    if((temp->value->id_shape)>=id){
-//        if(temp->value->id_shape != id){
-//            while((temp != NULL) && (temp->next->value->id_shape != id)){
-//                temp = temp->next;
-//            }
-//            delete_shape(temp->next->value);
-//            temp->next=temp->next->next;
-//        }else{
-//            delete_shape(temp->value);
-//            cell = cell->next;
-//        }
-//    }
-
 }
