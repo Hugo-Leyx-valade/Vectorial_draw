@@ -14,7 +14,7 @@ Rectangle *create_rect(Point* top_left, int width, int height){
 }
 void display_rect(Rectangle* rectangle){
     if(rectangle != NULL){
-        printf("SQUARE : %d %d | width: %d | heigth: %d ",rectangle->top_left->x1,rectangle->top_left->y1,rectangle->width,rectangle->height);
+        printf("RECTANGLE : %d %d | width: %d | heigth: %d ",rectangle->top_left->x1,rectangle->top_left->y1,rectangle->width,rectangle->height);
     }
 }
 
