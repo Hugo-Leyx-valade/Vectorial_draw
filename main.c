@@ -7,7 +7,7 @@
 
 int main() {
     int exit_status=0;
-    AREA* area = create_area(20,20);
+    AREA* area = create_area(50,50);
     while(exit_status==0){
         action(&exit_status,area);
     }
