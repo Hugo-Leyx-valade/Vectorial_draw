@@ -91,7 +91,7 @@ void action_add_form(AREA* area ) {
             add_shape_to_area(area,line);
             break;
         case '3':
-            printf("Saisir: x x coté: ");
+            printf("Saisir: x x cote: ");
             char coords_square[5];
             StringArray reelcoords_square;
             gets(coords_square);
